@@ -25,7 +25,6 @@ interface PostProps {
 }
 
 export function Post({content, author, publishedAt}:PostProps) {
-  console.log('renderizou')
 
   const [comments, setComments] = useState([
     "Post muito bacana, hein?!"
@@ -64,7 +63,7 @@ export function Post({content, author, publishedAt}:PostProps) {
   }
 
   function handleNewCommentInvalid (e:InvalidEvent<HTMLTextAreaElement>) {
-    e.target.setCustomValidity('Esse campo é obrigatório')
+    console.log(e.target.setCustomValidity('Esse campo é obrigatório'))
   }
 
   function deleteComment (commentToDelete:string) {
